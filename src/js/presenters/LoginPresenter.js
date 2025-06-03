@@ -46,7 +46,7 @@ class LoginPresenter {
 
   _redirectUser() {
     // Mengubah href akan memaksa reload halaman ke root aplikasi
-    window.location.href = "/";
+    window.location.hash = "/";
   }
 }
 
