@@ -1,0 +1,20 @@
+/* src/styles/components/_utilities.css */
+
+.skip-to-content {
+    position: absolute;
+    top: -50px;
+    /* Posisikan di luar layar (di atas) */
+    left: 0;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 9999;
+    /* Pastikan selalu di paling depan saat muncul */
+    text-decoration: none;
+    transition: top 0.3s ease-in-out;
+}
+
+.skip-to-content:focus {
+    top: 10px;
+    /* Bawa ke dalam layar saat mendapat fokus */
+}

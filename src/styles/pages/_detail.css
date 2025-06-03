@@ -1,0 +1,111 @@
+/* src/styles/pages/_detail.css (VERSI BARU) */
+.story-detail {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 1. Memperbaiki Tombol Kembali */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+    /* Warna teks menjadi biru */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border: 1px solid var(--primary-color);
+    /* Border biru */
+    border-radius: 50px;
+    background-color: transparent;
+    /* Latar transparan */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-button:hover {
+    background-color: var(--primary-color);
+    /* Latar menjadi biru solid */
+    color: white;
+    /* Teks menjadi putih */
+    text-decoration: none;
+}
+
+.story-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    /* Memberi jarak lebih besar antar kolom */
+    padding: 2rem;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 800px) {
+    .story-detail-layout.has-map {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.story-detail__image {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Memberi ruang dan memperjelas Judul */
+.story-detail__name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+/* Menambahkan garis bawah stylish */
+.story-detail__name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background-color: var(--secondary-color);
+}
+
+/* 3. Memberi ruang dan memperjelas teks Tanggal */
+.story-detail__date {
+    font-size: 0.9rem;
+    color: var(--font-color-light);
+    margin-top: 1.5rem;
+    /* Memberi jarak dari judul */
+    margin-bottom: 1.5rem;
+    /* Memberi jarak ke deskripsi */
+}
+
+/* 4. Memberi ruang dan keterbacaan pada Deskripsi */
+.story-detail__description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--font-color);
+}
+
+.story-detail__map-container h3 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.story-detail__map {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+    z-index: 1;
+}

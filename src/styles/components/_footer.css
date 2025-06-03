@@ -1,0 +1,11 @@
+/* src/styles/components/_footer.css */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    /* Memberi jarak dari konten di atasnya */
+    flex-shrink: 0;
+    /* Mencegah footer menyusut */
+}

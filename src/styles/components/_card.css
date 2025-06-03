@@ -1,0 +1,57 @@
+/* src/styles/components/_card.css */
+.stories-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.story-item {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.story-item__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.story-item__content {
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.story-item__name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.story-item__description {
+    font-size: 0.9rem;
+    color: var(--font-color-light);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.story-item__date {
+    font-size: 0.8rem;
+    color: var(--font-color-light);
+    text-align: right;
+    margin-top: auto;
+}
+
+.story-item-link {
+    text-decoration: none;
+    color: inherit;
+}

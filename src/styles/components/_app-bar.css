@@ -1,0 +1,90 @@
+/* src/styles/components/_app-bar.css*/
+
+.app-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    /* <-- Diubah dari --surface-color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.app-bar__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.app-bar__logo {
+    height: 40px;
+}
+
+.app-bar__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    /* <-- Diubah dari --primary-color */
+    text-decoration: none;
+}
+
+.app-bar__auth {
+    display: flex;
+    align-items: center;
+}
+
+.app-bar__auth a, .app-bar__auth button {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+}
+
+/* Tombol logout tidak berubah, sudah bagus */
+#logout-button {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#logout-button:hover {
+    opacity: 0.9;
+}
+
+/* Tombol login diubah agar kontras dengan header biru */
+.app-bar__auth a {
+    background-color: var(--surface-color);
+    /* Latar putih */
+    color: var(--primary-color);
+    /* Teks biru */
+}
+
+.app-bar__auth a:hover {
+    opacity: 0.9;
+}
+
+/* Tombol notifikasi diubah agar terlihat di latar biru */
+.notification-button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    /* Warna putih transparan */
+}
+
+.notification-button:hover {
+    color: white;
+    /* Warna putih solid saat di-hover */
+}
+
+.notification-button.subscribed {
+    color: var(--success-color);
+    /* Warna hijau jika sudah subscribe */
+}
