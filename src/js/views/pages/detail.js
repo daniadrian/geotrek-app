@@ -24,7 +24,7 @@ const Detail = {
     const hasLocation = story.lat && story.lon;
 
     container.innerHTML = `
-      <a href="/#/" class="back-button">
+      <a href="#/" class="back-button">
         &larr; Kembali ke Home
       </a>
       <div class="story-detail-layout ${hasLocation ? "has-map" : ""}">
