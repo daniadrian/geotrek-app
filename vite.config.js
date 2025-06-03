@@ -5,8 +5,8 @@ import { VitePWA } from "vite-plugin-pwa";
 export default ({ command }) => {
   //const base = command === "build" ? "/geotrek-app/" : "/"; // Sesuaikan '/geotrek-app/' jika nama repo Anda berbeda
   const repoName = "geotrek-app"; // <-- GANTI INI DENGAN NAMA REPO ANDA
-  // const base = command === "build" ? `/${repoName}/` : "/";
-  const base = "/";
+  const base = command === "build" ? `/${repoName}/` : "/";
+  // const base = "/";
 
   return defineConfig({
     base: base,

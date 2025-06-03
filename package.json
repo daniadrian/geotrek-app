@@ -2,7 +2,7 @@
   "name": "geotrek-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/daniadrian/geotrek-app",
+  "homepage": "https://daniadrian.github.io/geotrek-app/",
   "type": "module",
   "scripts": {
     "dev": "vite",
