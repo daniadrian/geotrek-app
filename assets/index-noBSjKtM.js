@@ -68,7 +68,7 @@
       <div class="add-story-container">
         <h2>Tambah Cerita Baru</h2>
         <form id="add-story-form">
-          <a href="/#/" class="back-button" style="margin-bottom: 1.5rem;"> 
+          <a href="#/" class="back-button" style="margin-bottom: 1.5rem;"> 
             &larr; Kembali ke Home
           </a>
 
