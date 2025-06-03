@@ -106,7 +106,7 @@
         <p>Memuat detail cerita...</p>
       </div>
     `},afterRender(){new qs({view:this,model:Ft})},renderStory(h){const l=document.querySelector("#story-detail-container"),a=h.lat&&h.lon;l.innerHTML=`
-      <a href="/#/" class="back-button">
+      <a href="#/" class="back-button">
         &larr; Kembali ke Home
       </a>
       <div class="story-detail-layout ${a?"has-map":""}">
