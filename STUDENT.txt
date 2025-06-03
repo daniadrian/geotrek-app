@@ -1,1 +1,11 @@
-MAP_API_KEY = 
+Nama : Dani Adrian
+Cohort ID : FC006D5Y2324
+Group Belajar : FC-29
+
+URL Aplikasi Live : https://daniadrian.github.io/geotrek-app/
+
+API Key MapTiler :
+Nwlgvpjr5ilTxE5E0b17
+
+URL Repository Github :
+https://github.com/daniadrian/geotrek-app
