@@ -11,8 +11,8 @@
   <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
 
   <title>GeoTrek</title>
-  <script type="module" crossorigin src="/geotrek-app/assets/index-noBSjKtM.js"></script>
-  <link rel="stylesheet" crossorigin href="/geotrek-app/assets/index-n3WtOW4S.css">
+  <script type="module" crossorigin src="/geotrek-app/assets/index-BYAWlHei.js"></script>
+  <link rel="stylesheet" crossorigin href="/geotrek-app/assets/index-B59i-top.css">
 <link rel="manifest" href="/geotrek-app/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/geotrek-app/registerSW.js"></script></head>
 
 <body>
@@ -24,6 +24,12 @@
         <img src="/geotrek-app/logo.png" alt="GeoTrek Logo" class="app-bar__logo">
         <a href="#/" class="app-bar__title">GeoTrek</a>
       </div>
+
+      <div class="app-bar__navigation">
+        <a href="#/">Home</a>
+        <a href="#/favorites">Favorites</a>
+      </div>
+
       <div id="auth-nav" class="app-bar__auth">
       </div>
     </nav>
@@ -31,6 +37,10 @@
 
   <main id="main-content">
   </main>
+
+  <div class="fab-container" id="fab-container" style="display: none;">
+    <a href="#/add" class="fab" aria-label="Add New Story">+</a>
+  </div>
 
   <footer>
     <p>Copyright © 2025 - GeoTrek</p>
