@@ -109,3 +109,21 @@
     border-radius: 8px;
     z-index: 1;
 }
+
+.like-button-container-detail {
+    position: fixed;
+    bottom: 6rem;
+    /* Jarak dari bawah menjadi sekitar 96px. Anda bisa coba 5rem, 7rem, dst. */
+    right: 4rem;
+    /* Jarak dari kanan bisa tetap atau disesuaikan juga sesuai selera */
+    z-index: 20;
+}
+
+.like-button-container-detail .like-button {
+    font-size: 3rem;
+    /* Buat lebih besar dari FAB */
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 0 8px white;
+}

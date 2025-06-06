@@ -2,17 +2,25 @@
 import L from "leaflet";
 import DetailPresenter from "../../presenters/DetailPresenter";
 import StoryApi from "../../data/story-api";
+import FavoriteStoryIdb from "../../data/database-helper";
+import {
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+} from "../templates/template-creator";
 
 const Detail = {
   render() {
+    // Container untuk detail dan tombol like sekarang di render bersamaan
     return `
       <div id="story-detail-container">
         <p>Memuat detail cerita...</p>
       </div>
+      <div id="likeButtonContainer" class="like-button-container-detail"></div>
     `;
   },
 
-  afterRender() {
+  async afterRender() {
+    // Cukup inisialisasi Presenter, biarkan Presenter yang bekerja
     new DetailPresenter({
       view: this,
       model: StoryApi,
@@ -21,6 +29,7 @@ const Detail = {
 
   renderStory(story) {
     const container = document.querySelector("#story-detail-container");
+    if (!container) return;
     const hasLocation = story.lat && story.lon;
 
     container.innerHTML = `
@@ -60,6 +69,37 @@ const Detail = {
 
     if (hasLocation) {
       this._initMap(story.lat, story.lon);
+    }
+  },
+
+  async renderLikeButton(story) {
+    const likeButtonContainer = document.querySelector("#likeButtonContainer");
+    if (!likeButtonContainer || !story) return;
+
+    // 1. Cek ke database apakah cerita ini sudah jadi favorit
+    const isFavorited = !!(await FavoriteStoryIdb.getStory(story.id));
+
+    // 2. Render tombol yang sesuai (hati kosong atau hati terisi)
+    likeButtonContainer.innerHTML = isFavorited
+      ? createLikedButtonTemplate()
+      : createLikeButtonTemplate();
+
+    // 3. Tambahkan event listener untuk klik
+    const likeButton = document.querySelector("#likeButton");
+    if (likeButton) {
+      likeButton.addEventListener("click", async () => {
+        // Cek lagi status favorit saat tombol diklik
+        const isNowFavorited = !!(await FavoriteStoryIdb.getStory(story.id));
+        if (isNowFavorited) {
+          // Jika sudah favorit, hapus dari database
+          await FavoriteStoryIdb.deleteStory(story.id);
+        } else {
+          // Jika belum favorit, simpan ke database
+          await FavoriteStoryIdb.putStory(story);
+        }
+        // Render ulang tombol untuk menampilkan status baru (UI update)
+        await this.renderLikeButton(story);
+      });
     }
   },
 

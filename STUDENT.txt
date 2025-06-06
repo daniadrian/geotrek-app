@@ -9,3 +9,21 @@ Nwlgvpjr5ilTxE5E0b17
 
 URL Repository Github :
 https://github.com/daniadrian/geotrek-app
+
+--- CATATAN PENTING UNTUK PENILAI ---
+
+Untuk menjalankan proyek ini di lingkungan lokal (menggunakan `npm run dev` atau `npm run preview`), ada dua cara yang bisa dilakukan karena konfigurasi `base` path yang sudah disesuaikan untuk deployment ke GitHub Pages:
+
+Cara 1 (Direkomendasikan):
+Setelah menjalankan `npm run dev` atau `npm run preview`, mohon akses aplikasi melalui URL yang menyertakan nama repository, contoh:
+- Untuk dev: http://localhost:5173/geotrek-app/
+- Untuk preview: http://localhost:4173/geotrek-app/
+
+Cara 2 (Jika ingin akses dari root '/'):
+Ubah sementara file `vite.config.js`. Cari baris berikut:
+const base = command === "build" ? `/${repoName}/` : "/";
+
+Dan ganti menjadi:
+const base = "/";
+
+Dengan cara ini, aplikasi bisa diakses dari http://localhost:5173/ seperti biasa. Mohon kembalikan ke pengaturan awal sebelum melakukan build untuk production.

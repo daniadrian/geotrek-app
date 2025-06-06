@@ -7,6 +7,7 @@ import AddStory from "../views/pages/add-story";
 import Detail from "../views/pages/detail";
 import AuthHelper from "../utils/auth-helper";
 import PushNotificationHelper from "../utils/push-notification-helper";
+import Favorites from "../views/pages/favorites";
 
 const routes = {
   "/": Home,
@@ -14,6 +15,7 @@ const routes = {
   "/register": Register,
   "/add": AddStory,
   "/detail/:id": Detail,
+  "/favorites": Favorites,
 };
 
 const updateAuthNav = async (request) => {
@@ -142,6 +144,16 @@ const router = async () => {
     return;
   }
   const request = window.location.hash.slice(1).toLowerCase() || "/";
+
+  const fabContainer = document.querySelector("#fab-container");
+  if ((request === "/" || request === "") && AuthHelper.isUserLoggedIn()) {
+    // Tampilkan FAB hanya jika di halaman utama DAN sudah login
+    fabContainer.style.display = "block";
+  } else {
+    // Sembunyikan di halaman lain
+    fabContainer.style.display = "none";
+  }
+  // AKHIR LOGIKA BARU
 
   const urlParts = request.split("/");
   const path = `/${urlParts[1] || ""}`;

@@ -18,4 +18,22 @@ const createStoryItemTemplate = (story) => `
   </a>
 `;
 
-export { createStoryItemTemplate };
+// FUNGSI BARU: Template untuk tombol "like" (hati kosong)
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this story" id="likeButton" class="like-button">
+    🤍
+  </button>
+`;
+
+// FUNGSI BARU: Template untuk tombol "liked" (hati terisi)
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this story" id="likeButton" class="like-button">
+    ❤️
+  </button>
+`;
+
+export {
+  createStoryItemTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};

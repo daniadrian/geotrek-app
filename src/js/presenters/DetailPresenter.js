@@ -14,7 +14,10 @@ class DetailPresenter {
       if (response.error) {
         throw new Error(response.message);
       }
+
       this._view.renderStory(response.story);
+
+      await this._view.renderLikeButton(response.story);
     } catch (error) {
       alert(`Gagal memuat cerita: ${error.message}`);
     }

@@ -55,3 +55,20 @@
     text-decoration: none;
     color: inherit;
 }
+
+.like-button {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    text-shadow: 0 0 5px white;
+    /* Memberi outline pada emoji */
+}
+
+.story-item {
+    /* Tambahkan ini agar position absolute bekerja dengan benar */
+    position: relative;
+}

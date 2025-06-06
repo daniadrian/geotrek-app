@@ -88,3 +88,19 @@
     color: var(--success-color);
     /* Warna hijau jika sudah subscribe */
 }
+
+.app-bar__navigation {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.app-bar__navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.app-bar__navigation a:hover {
+    color: var(--secondary-color);
+}

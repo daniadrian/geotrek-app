@@ -14,9 +14,6 @@ const Home = {
         <div id="stories-list" class="stories-list">
           <p>Memuat cerita...</p>
         </div>
-        <div class="fab-container">
-          <a href="#/add" class="fab" aria-label="Add New Story">+</a>
-        </div>
       `;
     }
 
